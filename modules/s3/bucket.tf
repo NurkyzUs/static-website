@@ -31,7 +31,7 @@ resource "aws_s3_bucket_public_access_block" "bucket_n" {
   ignore_public_acls      = true
 }
 
-### this key is used to encrypt bucket objects
+### this key will be used to encrypt bucket objects
 resource "aws_kms_key" "my_key" {
   deletion_window_in_days = 8
 }
