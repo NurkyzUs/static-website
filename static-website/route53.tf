@@ -15,10 +15,14 @@ resource "aws_route53_record" "www_route53" {
   }
 }
 
-resource "aws_route53_record" "cert_validation" {
-  zone_id = aws_route53_zone.zone_id.zone_id
-  name    = 
-  type    = 
-  ttl     = "20"
-  records = []
-}
+// resource "aws_route53_record" "cert_validation" {
+//   zone_id = aws_route53_zone.zone_id.zone_id
+//   name    = var.domain_name
+//   type    = "CNAME"
+
+//   alias {
+//       name = data.aws_acm_certificate.acm_domain.domain_name
+//       zone_id = data.aws_acm_certificate.acm_domain.hosted_zone_id
+//       evaluate_target_health = false
+//   }
+// }
