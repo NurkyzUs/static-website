@@ -1,10 +1,10 @@
 ### it will create S3 bucket with public-read acl 
 
-resource "aws_s3_bucket" "www_bucket" {
+resource "aws_s3_bucket" "www_bucket_n" {
   bucket = "www.${var.bucket_name}"
   acl    = "public-read"
 
-  ### to make this bucket publicly readable we need to generate "bucket_policy" in json format
+  ### to make this bucket publicly readable we need to generate "bucket policy"
 
   policy = file("s3_policy.json")
 
@@ -22,14 +22,5 @@ resource "aws_s3_bucket" "www_bucket" {
   tags = local.common_tags
 }
 
-### all public acces on S3 bucket will be blocked
 
-resource "aws_s3_bucket_public_access_block" "bucket_n" {
-  bucket = aws_s3_bucket.www_bucket.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  restrict_public_buckets = true
-  ignore_public_acls      = true
-}
 
