@@ -5,10 +5,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.main.cloudfront_access_identity_path
-      }
+    }
   }
 
-  
+
   enabled             = true
   default_root_object = "index.html"
   aliases             = ["www.${var.domain_name}", "${var.domain_name}"]
