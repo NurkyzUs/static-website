@@ -5,6 +5,11 @@ variable "bucket_name" {
 
 variable "domain_name" {
   type        = string
-  description = "the name of my website"
+  description = "the name of the website"
+}
+
+variable "www_domain" {
+  type        = string
+  description = "the name of the  website with www"
 }
 

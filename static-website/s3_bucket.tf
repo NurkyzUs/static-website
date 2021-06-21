@@ -1,7 +1,7 @@
 ### it will create S3 bucket with private acl 
 
 resource "aws_s3_bucket" "www_bucket_n" {
-  bucket = "www.${var.bucket_name}"
+  bucket = "web.${var.bucket_name}"
   acl    = "private"
 
   
@@ -27,6 +27,7 @@ resource "aws_s3_bucket_public_access_block" "example" {
   block_public_acls   = true
   block_public_policy = true
   restrict_public_buckets = true
+  ignore_public_acls = true
 }
 
 
