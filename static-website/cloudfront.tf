@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   enabled             = true
   default_root_object = "index.html"
-  aliases             = ["www.${var.domain_name}", "${var.domain_name}"]
+  aliases             = ["${var.www_domain}", "${var.domain_name}"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
@@ -43,4 +43,5 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 resource "aws_cloudfront_origin_access_identity" "main" {
+  comment = "terraform-access-identity-static-web"
 }

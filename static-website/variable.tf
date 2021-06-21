@@ -13,3 +13,6 @@ variable "www_domain" {
   description = "the name of the  website with www"
 }
 
+variable "zone_id" {
+  type = string
+}
