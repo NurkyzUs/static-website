@@ -3,8 +3,6 @@
 resource "aws_s3_bucket" "www_bucket_n" {
   bucket = "web.${var.bucket_name}"
   acl    = "private"
-  policy = file("policy.json")
-
 
   website {
     index_document = "index.html" ### when request comes to our domain_name
@@ -31,5 +29,26 @@ resource "aws_s3_bucket_public_access_block" "example" {
   ignore_public_acls      = true
 }
 
-
+### creating a policy for s3 bucket to acces through CloudFront OAI
+resource "aws_s3_bucket_policy" "policy_oai" {
+    bucket = aws_s3_bucket.www_bucket_n.id
+  
+    policy = jsonencode ({
+      Version = "2012-10-17"
+      Statement = [
+        {
+          Sid       = "Allow-OAI-Access-To-Bucket",
+          Effect    = "Allow"
+          Principal = {
+              "AWS" = "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${aws_cloudfront_origin_access_identity.main.id}"
+          }
+          Action    = "s3:GetObject"
+          Resource = [
+            aws_s3_bucket.www_bucket_n.arn, "${aws_s3_bucket.www_bucket_n.arn}/*", 
+            ]
+          }
+       ]
+    }
+  )
+}
 
