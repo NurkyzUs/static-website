@@ -1,57 +1,54 @@
-# Hosting a Secure Static Website with AWS by using a Terraform
+## Hosting a Secure Static Website with AWS by using a Terraform
 
 ![](img/static-web.png)
-* ## Prerequisites:
-    - [Terraform](https://www.terraform.io) Version ~> 0.15.0  
-    and AWS Version ~> 3.40.0 installed on VSCode(or any code editor)
 
+* ### What does the code deploy? 
  
- * ##  AWS Services which we need to create:
-    - ### S3 bucket [s3_bucket.tf](s3_bucket.tf) 
+    - #### S3 bucket [s3_bucket.tf](s3_bucket.tf) 
         * bucket for our domain to host a website
     
-    - ### CloudFront (OAI) [cloudfront.tf](cloudfront.tf) : 
+    - #### CloudFront (OAI) [cloudfront.tf](cloudfront.tf) : 
         * CloudFront Distribution for S3 bucket
         * OAI to access S3 bucket privately
 
-    - ### Route53 (hosted zone) [route53.tf](route53.tf)
+    - #### Route53 (hosted zone) [route53.tf](route53.tf)
         * alias records for domain with www and without
     
-    - ### ACM SSL Certificate
+    - #### ACM SSL Certificate
         * SSL Certificate for our domain 
 
+* ### Prerequisites:
+    - [Terraform](https://www.terraform.io) Version ~> 0.15.0  and AWS Version ~> 3.40.0 installed on VSCode(or any code editor)
+    - Configured Hosted Zone
+    - SSL Certificate 
 
+- ### How to deploy the code?
 
-- ## Terraform commands to run:
+Clone Repo
+
 ```
-    
- terraform init
-``` 
-Initialize our code 
+git clone https://github.com/NurkyzUs/static-website.git
+```
 
+Initialize the code 
+```
+ terraform init
+```  
+Check if the configuration is valid
 ```
 terraform validate
 ```
-Check if the configuration is valid
+Show changes required by the current configuration
 
 ```
 terraform plan
 ``` 
-Show changes required by the current configuration
-
+Create or update the infrastructure
 ```
 terraform apply
 ```
-Create or update the infrastructure
 
+Destroy the current infrastructure
 ```
 terraform destroy
 ```
-Destroy the current infrastructure
-       
-    
-        
-
-
-
-
