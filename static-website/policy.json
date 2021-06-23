@@ -1,0 +1,14 @@
+{
+    "Version":"2012-10-17",
+    "Statement":[
+      {
+	"Sid": "Allow-OAI-Access-To-Bucket",
+	"Effect": "Allow",
+	"Principal": {
+		"AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E2G69P3FU13JAV"
+		},
+	"Action": "s3:GetObject",
+	"Resource": "arn:aws:s3:::web.nurkyz.info/*"
+   }   
+]
+}
