@@ -15,21 +15,43 @@
         * OAI to access S3 bucket privately
 
     - ### Route53 (hosted zone) [route53.tf](route53.tf)
-        * alias records for www and root domain
+        * alias records for domain with www and without
     
     - ### ACM SSL Certificate
         * SSL Certificate for our domain 
 
 
 
-- ### Terraform commands to run:
-        * terraform init
+- ## Terraform commands to run:
+```
+    
+        terraform init
+``` 
+Initialize our code 
 
-        * terraform validate
+```
+        terraform validate
+```
+Check if the configuration is valid
 
-        * terraform plan
+```
+        terraform plan
+``` 
+Show changes required by the current configuration
 
-        * terraform apply
+```
+        terraform apply
+```
+Create or update the infrastructure
+
+```
+        terraform destroy
+```
+Destroy the current infrastructure
+       
+    
+        
+
 
 
 
