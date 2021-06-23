@@ -25,27 +25,27 @@
 - ## Terraform commands to run:
 ```
     
-        terraform init
+ terraform init
 ``` 
 Initialize our code 
 
 ```
-        terraform validate
+terraform validate
 ```
 Check if the configuration is valid
 
 ```
-        terraform plan
+terraform plan
 ``` 
 Show changes required by the current configuration
 
 ```
-        terraform apply
+terraform apply
 ```
 Create or update the infrastructure
 
 ```
-        terraform destroy
+terraform destroy
 ```
 Destroy the current infrastructure
        
