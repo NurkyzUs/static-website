@@ -29,7 +29,7 @@
 
         * terraform plan
 
-        * terraform appy
+        * terraform apply
 
 
 
