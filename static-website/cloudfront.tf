@@ -1,3 +1,4 @@
+### create distribution for S3 bucket
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name = aws_s3_bucket.www_bucket_n.bucket_regional_domain_name
@@ -36,6 +37,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
       locations        = ["US", "CA"]
     }
   }
+
+  ### SSL Certificate
   viewer_certificate {
     acm_certificate_arn = data.aws_acm_certificate.acm_domain.arn
     ssl_support_method  = "sni-only"
