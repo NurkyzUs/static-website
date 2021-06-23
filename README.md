@@ -11,21 +11,24 @@
         * bucket for our domain to host a website
     
     - ### CloudFront (OAI) [cloudfront.tf](cloudfront.tf) : 
-        * CloudFront Distribution for S3 bucket;
+        * CloudFront Distribution for S3 bucket
         * OAI to access S3 bucket privately
 
-    - ### Route53 (hosted zone)
+    - ### Route53 (hosted zone) [route53.tf](route53.tf)
         * alias records for www and root domain
     
     - ### ACM SSL Certificate
-        * SSL Certificate for our domain
+        * SSL Certificate for our domain 
 
 
 
-- ### Terraform commands:
+- ### Terraform commands to run:
         * terraform init
+
         * terraform validate
+
         * terraform plan
+
         * terraform appy
 
 
