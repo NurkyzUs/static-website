@@ -38,7 +38,7 @@ Check if the configuration is valid
 ```
 terraform validate
 ```
-Show changes required by the current configuration
+Check the execution plan , preview the changes
 
 ```
 terraform plan
