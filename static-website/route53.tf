@@ -1,5 +1,6 @@
+### create alias record for main domain 
 resource "aws_route53_record" "main_route53" {
-  zone_id = var.zone_id
+  zone_id = data.aws_route53_zone.main.zone_id
   name    = var.domain_name
   type    = "A"
 
@@ -10,8 +11,9 @@ resource "aws_route53_record" "main_route53" {
   }
 }
 
+### create alias record for domain with www 
 resource "aws_route53_record" "www_route53" {
-  zone_id = var.zone_id
+  zone_id = data.aws_route53_zone.main.zone_id
   name    = var.www_domain
   type    = "A"
 

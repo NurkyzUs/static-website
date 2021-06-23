@@ -1,18 +1,7 @@
-variable "bucket_name" {
-  type        = string
-  description = "this is the name of the bucket ( my domain name) "
-}
+variable "bucket_name" {}
 
-variable "domain_name" {
-  type        = string
-  description = "the name of the website"
-}
+variable "domain_name" {}
 
-variable "www_domain" {
-  type        = string
-  description = "the name of the  website with www"
-}
+variable "www_domain" {}
 
-variable "zone_id" {
-  type = string
-}
+// variable "zone_id" {} zone_id = "Z04144593I7RJCY9T14X8"
