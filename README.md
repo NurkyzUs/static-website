@@ -1,6 +1,6 @@
 # Hosting a Secure Static Website with AWS by using a Terraform
 
-
+![](img/static-web.png)
 * ## Prerequisites:
     - [Terraform](https://www.terraform.io) Version ~> 0.15.0  
     and AWS Version ~> 3.40.0 installed on VSCode(or any code editor)
