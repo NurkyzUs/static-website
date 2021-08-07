@@ -7,11 +7,11 @@
     - #### S3 bucket [s3_bucket.tf](static-website/s3_bucket.tf) 
         * bucket for our domain to host a website
     
-    - #### CloudFront (OAI) [cloudfront.tf](cloudfront.tf) : 
+    - #### CloudFront (OAI) [cloudfront.tf](static-website/cloudfront.tf) : 
         * CloudFront Distribution for S3 bucket
         * OAI to access S3 bucket privately
 
-    - #### Route53 (hosted zone) [route53.tf](route53.tf)
+    - #### Route53 (hosted zone) [route53.tf](static-website/route53.tf)
         * alias records for domain with www and without
     
     - #### ACM SSL Certificate
