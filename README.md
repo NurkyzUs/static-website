@@ -4,7 +4,7 @@
 
 * ### What does the code deploy? 
  
-    - #### S3 bucket [s3_bucket.tf](s3_bucket.tf) 
+    - #### S3 bucket [s3_bucket.tf](static-website/s3_bucket.tf) 
         * bucket for our domain to host a website
     
     - #### CloudFront (OAI) [cloudfront.tf](cloudfront.tf) : 
